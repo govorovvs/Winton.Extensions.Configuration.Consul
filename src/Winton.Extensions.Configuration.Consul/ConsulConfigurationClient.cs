@@ -92,7 +92,7 @@ namespace Winton.Extensions.Configuration.Consul
         {
             lock (_lastIndexLock)
             {
-                if (queryResult.LastIndex > _lastIndex)
+                if (queryResult.LastIndex != _lastIndex)
                 {
                     _lastIndex = queryResult.LastIndex;
                     return true;
